@@ -1,4 +1,4 @@
-﻿namespace ICE3
+﻿namespace FinanceTracker
 {
     public class Budget
     {

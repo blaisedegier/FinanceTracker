@@ -42,15 +42,15 @@ cd FinanceTracker
 ### Build and run via CLI
 
 ```bash
-dotnet restore ICE3.sln
-dotnet build ICE3.sln -c Release
-dotnet run --project prog6212-ice-3-ST10249838/prog6212-ice-3-ST10249838.csproj
+dotnet restore FinanceTracker.sln
+dotnet build FinanceTracker.sln -c Release
+dotnet run --project FinanceTracker/FinanceTracker.csproj
 ```
 
 ### Build and run via Visual Studio
 
-1. Open `ICE3.sln` in Visual Studio 2022
-2. Set **prog6212-ice-3-ST10249838** as the startup project
+1. Open `FinanceTracker.sln` in Visual Studio 2022
+2. Set **FinanceTracker** as the startup project
 3. Press **F5** to build and launch
 
 ## Usage
@@ -68,19 +68,19 @@ The application opens with a two-panel layout:
 
 ```text
 FinanceTracker/
-├── ICE3.sln                                  # Visual Studio solution file
+├── FinanceTracker.sln                        # Visual Studio solution file
 ├── .gitignore
 ├── .gitattributes
 ├── README.md
-└── prog6212-ice-3-ST10249838/                # Main project directory
-    ├── prog6212-ice-3-ST10249838.csproj      # .NET 8 WPF project file
-    ├── App.xaml / App.xaml.cs                 # Application entry point
-    ├── MainWindow.xaml / MainWindow.xaml.cs   # UI layout and event handlers
-    ├── FinanceTracker.cs                      # Core logic (budgets, transactions, reports)
-    ├── Transaction.cs                         # Transaction model
-    ├── Budget.cs                              # Budget model with computed totals
-    ├── Report.cs                              # Monthly and category report generation
-    └── AssemblyInfo.cs                        # Assembly metadata
+└── FinanceTracker/                           # Main project directory
+    ├── FinanceTracker.csproj                 # .NET 8 WPF project file
+    ├── App.xaml / App.xaml.cs                # Application entry point
+    ├── MainWindow.xaml / MainWindow.xaml.cs  # UI layout and event handlers
+    ├── FinanceTracker.cs                     # Core logic (budgets, transactions, reports)
+    ├── Transaction.cs                        # Transaction model
+    ├── Budget.cs                             # Budget model with computed totals
+    ├── Report.cs                             # Monthly and category report generation
+    └── AssemblyInfo.cs                       # Assembly metadata
 ```
 
 ## Architecture
@@ -113,7 +113,7 @@ All data is held **in memory** during the application session. Closing the appli
 To create a self-contained executable:
 
 ```bash
-dotnet publish prog6212-ice-3-ST10249838/prog6212-ice-3-ST10249838.csproj -c Release -r win-x64 --self-contained
+dotnet publish FinanceTracker/FinanceTracker.csproj -c Release -r win-x64 --self-contained
 ```
 
 The output will be in `bin/Release/net8.0-windows/win-x64/publish/`.
@@ -121,9 +121,6 @@ The output will be in `bin/Release/net8.0-windows/win-x64/publish/`.
 ## Known Limitations
 
 - **No persistence:** data is lost when the application closes
-- **No input validation:** non-numeric values in amount or year fields will cause an error
-- **No unit tests:** the project does not include a test suite
-- **Windows only:** WPF does not support cross-platform deployment
 - **No input validation:** non-numeric values in amount or year fields will cause an error
 - **No unit tests:** the project does not include a test suite
 - **Windows only:** WPF does not support cross-platform deployment

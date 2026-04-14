@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace ICE3
+namespace FinanceTracker
 {
     public partial class MainWindow : Window
     {
